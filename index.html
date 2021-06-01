@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Parking Online</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/my-custome.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body style="background-color: #F8E4B9;">
+
+    <div class="container" >
+      <div class="row my-headers">
+        <div class="col">
+          <p class="font-head">
+            Online Parking
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row body-wrapper">
+      <div class="col body-content">
+
+        <!-- Icon Area-->
+        <div class="=inside icons-area" id="iconArea">
+          <div class="row icons-place">
+            <div class="col" id="userSect">
+              <img src="media/parkir.png" class="img-fluid icons-image" alt="" onclick="userSection()" id="userImg">
+            </div>
+            <div class="col" id="PASect">
+              <img src="media/tukang parkir.png" class="img-fluid icons-image" alt="" onclick="PASection()" id="PAImg">
+            </div>
+            <div class="col" id="adminSect">
+              <img src="media/admin.png" class="img-fluid icons-image" alt="" onclick="adminSection()" id="adminImg">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Parking area finding--->
+        <div class="container inside" id="parking-place">
+          <div class="row">
+            <div class="col">
+              <p class="font-child-1">
+                We found these parking area nearby..
+              </p>
+              <div class="mb-3 row">
+                <div class="col">
+                  <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#waiting" onclick="placeClicked()">Ngabean</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Waiting response parking attendants-->
+        <div class="container inside collapse" id="waiting">
+          <div class="row">
+            <div class="col">
+              <p class="font-child-1">
+                Please wait response from parking attendants..
+              </p>
+              <div class="mb-3 row">
+                <div class="col">
+                  <img src="media/loading.gif" class="loading-img" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PA no request coming..-->
+        <div class="container inside collapse" id="PA-no-request">
+          <div class="row">
+            <div class="col">
+              <p class="font-child-1">
+                Yess, no other request :)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parking attendant accept parking request--->
+        <div class="container inside collapse" id="parking-request">
+          <div class="row">
+            <div class="col">
+              <p class="font-child-1">
+                Accept parking?
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="parkingLocation" class="col-sm-2 col-form-label">Parking Location</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="parkingLocation" readonly>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="parkingDate" class="col-sm-2 col-form-label">Parking Date</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="parkingDate" placeholder="" readonly>
+            </div>
+          </div>
+          <div class="row button-panel">
+            <div class="col">
+              <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#PA-no-request" onclick="acceptPark()">Accept</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-danger" onclick="window.location.reload()">Decline</button>
+            </div>
+          </div>
+        </div>
+        
+
+        <!---USER PARK-->
+        <div class="container inside collapse" id="user-park">
+          <div class="row">
+            <div class="col">
+              <p class="font-child-1">
+                Congrats, you are set up!
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="userParkLocation" class="col-sm-2 col-form-label">Parking Location</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="userParkLocation">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="userParkDate" class="col-sm-2 col-form-label">Parking Date</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="userParkDate">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="userParkDuration" class="col-sm-2 col-form-label">Duration</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="userParkDuration">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="userParkFee" class="col-sm-2 col-form-label">Fee</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="userParkFee">
+            </div>
+          </div>
+          <div class="row button-panel">
+            <div class="col">
+              <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#employee-profile" onclick="payAndOutClicked()">Pay and Out</button>
+            </div>
+          </div>
+        </div>
+
+        <!---EMPLOYEE PROFILE-->
+        <div class="container inside collapse" id="employee-profile">
+          <div class="row">
+            <div class="col">
+              <p class="font-child-1">
+                Parking Attendant Profile
+              </p>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="PAname" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="PAname" readonly value="Kiko kiko">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="PAStartWork" class="col-sm-2 col-form-label">Start Work</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="PAStartWork" readonly value="1 January 2021, 05:00:07 WIB">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="PAWorkDuration" class="col-sm-2 col-form-label">Work Duration</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="PAWorkDuration" readonly value="5 Hours">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="PAManagedParkingTotal" class="col-sm-2 col-form-label">Total Managed Parking</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="PAManagedParkingTotal" readonly>
+            </div>
+          </div>
+          <div class="row button-panel">
+            <div class="col">
+              <button type="button" class="btn btn-success">Give Bonus Today</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary">Call to Office</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+
+    <script>
+
+      let parkingDate;
+      let parkingLocation = "Ngabean";
+      let parkStatus;
+      let parkDuration = 0;
+      let totalParking = 0;
+      const PARK_STATUS = {
+        NOT_PARKING: "NOT_PARKING",
+        WAITING: "WAITING",
+        PARKING: "PARKING",
+      };
+
+      function placeClicked(){
+        parkingDate = new Date();
+        document.getElementById("parking-place").style.display = "none";
+        document.getElementById("parkingLocation").value = parkingLocation;
+        document.getElementById("parkingDate").value = parkingDate;
+        
+        parkStatus = PARK_STATUS.WAITING;
+      }
+
+      function acceptPark(){
+        stateAllNone();
+        stateAllSectionInactive();
+        document.getElementById("PASect").style.backgroundColor = "#E67B58"
+
+        document.getElementById("userParkLocation").value = parkingLocation;
+        document.getElementById("userParkDate").value = parkingDate;
+        
+        parkDuration = getParkDuration(parkingDate);
+        const flatValue = 5000;
+
+        if (parkStatus == PARK_STATUS.WAITING) {
+          document.getElementById("PA-no-request").style.display = "inline";  
+        } else {
+          document.getElementById("parking-request").style.display = "inline"; 
+        }
+
+        document.getElementById("userParkDuration").value = parkDuration.toString() + " Minute";
+        document.getElementById("userParkFee").value = "Rp. " + numberWithCommas(flatValue);
+
+        parkStatus = PARK_STATUS.PARKING;
+      }
+
+      function payAndOutClicked(){
+        stateAllNone();
+        stateAllSectionInactive();
+        totalParking += 1;
+        parkStatus = PARK_STATUS.NOT_PARKING;
+       
+        userSection();
+      }
+
+      function stateAllNone() {
+        document.getElementById("parking-place").style.display = "none";
+        document.getElementById("user-park").style.display = "none";
+        document.getElementById("waiting").style.display = "none";
+        document.getElementById("employee-profile").style.display = "none";
+        document.getElementById("parking-request").style.display = "none";
+        document.getElementById("PA-no-request").style.display = "none";
+      }
+
+      function stateAllSectionInactive() {
+        document.getElementById("userSect").style.backgroundColor = "#FCF5E5";
+        document.getElementById("PASect").style.backgroundColor = "#FCF5E5";
+        document.getElementById("adminSect").style.backgroundColor = "#FCF5E5";
+      }
+
+      function userSection() {
+        stateAllNone();
+        stateAllSectionInactive();
+        document.getElementById("userSect").style.backgroundColor = "#E67B58"
+
+        if (parkStatus == PARK_STATUS.WAITING) {
+          document.getElementById("waiting").style.display = "inline";
+        } else if (parkStatus == PARK_STATUS.PARKING) {
+          parkDuration = getParkDuration(parkingDate);
+          document.getElementById("userParkDuration").value = parkDuration.toString() + " Minute";
+
+          document.getElementById("user-park").style.display = "inline";
+        } else {
+          document.getElementById("parking-place").style.display = "inline";
+        }
+      }
+
+      function PASection() {
+        stateAllNone();
+        stateAllSectionInactive();
+        document.getElementById("PASect").style.backgroundColor = "#E67B58";
+
+        if (parkStatus == PARK_STATUS.WAITING) {
+          document.getElementById("parking-request").style.display = "inline"; 
+        } else {
+          document.getElementById("PA-no-request").style.display = "inline";
+        }
+      }
+
+      function adminSection() {
+        stateAllNone();
+        stateAllSectionInactive();
+        document.getElementById("adminSect").style.backgroundColor = "#E67B58";
+        document.getElementById("employee-profile").style.display = "inline";
+        document.getElementById("PAManagedParkingTotal").value = totalParking.toString() + " Vehicle";
+      }
+
+      function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+
+      function getParkDuration(parkingDate){
+        return (((new Date() - parkingDate)/1000)/60).toFixed(3)
+      }
+    </script>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

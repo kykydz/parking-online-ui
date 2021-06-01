@@ -1,0 +1,91 @@
+div {
+    /* border-style: solid; */
+    border-width: 1px;
+}
+
+html {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    background-color: #F8E4B9;
+    font-family: 'Ubuntu', sans-serif;
+}
+.inside {
+    background-color: #FCF5E5;
+}
+
+.icons-area {
+    margin-top: -5vh;
+}
+
+.icons-image {
+    max-height: 100px;
+    margin-top: -8vh;
+}
+
+.icons-place {
+    margin-top: -5vh;
+}
+
+.my-headers {
+    background-color: #EAD166;
+    font-weight: bold;
+}
+
+.font-head {
+    font-size: 50px;
+    align-content: center;
+    text-align: center;
+    height: 30vh;
+    padding-top: 5vh;
+}
+.font-child-1 {
+    font-size: 40px;
+    align-content: center;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.body-wrapper {
+    margin-top: -5vh;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.body-content {
+    margin-left: 8%;
+    margin-right: 8%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 20%;
+    background-color: #FCF5E5;
+}
+
+.loading-img {
+    height: 200px;
+}
+
+#userSect {
+    display: block;
+    background-color: #E67B58;
+}
+#userImg {
+    display: inline;
+}
+
+#PASect {
+    background-color: #FCF5E5;
+}
+#PAImg {
+    display: inline;
+}
+
+#adminSect {
+    background-color: #FCF5E5;
+}
+#adminImg {
+    display: inline;
+}
