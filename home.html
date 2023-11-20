@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- default -->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Homepage</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- template font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+
+    <!-- template bootstrap 5 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- template css custom buatan sendiri -->
+    <link rel="stylesheet" href="mycss/custom.css">
+</head>
+<body>
+    <h1 class="header-title font-title">
+        Home
+    </h1>
+    <div class="row header-menu">
+        <div class="col icons-place icon-profile" onclick="showProfileSection()">
+            <img src="media/parkir.png" class="img-fluid icons-image" alt="" onclick="showProfileSection()">
+            <h3>Profile</h3>
+        </div>
+        <div class="col icons-place icon-contact" onclick="showContactSection()">
+            <img src="media/parkir.png" class="img-fluid icons-image" alt="" onclick="showContactSection()">
+            <h3>Contact</h3>
+        </div>
+    </div>
+    
+    <div class="container" id="profileSect">
+        <div class="row content-profile">
+            <div class="col">
+                <h3>
+                    Nama Lengkap
+                </h3>
+                <h5>
+                    Class X
+                </h5>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col content-box">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <br>
+                <br>
+                <br>
+
+                <!-- https://getbootstrap.com/docs/4.1/content/tables/ -->
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="contactSect">
+        <div class="row content-profile">
+            <div class="col">
+                <h3>
+                    Contact
+                </h3>
+                <h5>
+                    Class X
+                </h5>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col content-box">
+                this is contact section contaaaaactctttt took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <br>
+                <br>
+                <br>
+
+                <!-- Template form bootstrap  -->
+                <!-- https://getbootstrap.com/docs/4.1/components/forms/#form-row -->
+                <form class="form-style">
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputAddress2">Address 2</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option selected>Choose...</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function showProfileSection() {
+        document.getElementById("profileSect").style.display = "inline";
+        document.getElementById("contactSect").style.display = "none";
+    }
+
+    function showContactSection() {
+        document.getElementById("profileSect").style.display = "none";
+        document.getElementById("contactSect").style.display = "inline";
+    }
+</script>
+
+
+</html>
